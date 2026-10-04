@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #fff7fb;
+  color: #513d4a;
+  overflow-x: hidden;
+}
+
+main {
+  width: min(900px, 92%);
+  margin: auto;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.small {
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  font-size: 0.78rem;
+  color: #b9829e;
+  margin-bottom: 12px;
+}
+
+h1, h2 {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: clamp(3.2rem, 10vw, 6.5rem);
+  line-height: 0.95;
+  color: #7e4e69;
+}
+
+h2 {
+  font-size: clamp(2rem, 6vw, 3.2rem);
+  color: #7e4e69;
+  margin-bottom: 18px;
+}
+
+.subtitle {
+  margin: 20px 0 30px;
+  font-size: 1rem;
+  color: #866777;
+}
+
+button {
+  border: none;
+  background: #c982a4;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 30px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.25s;
+  box-shadow: 0 8px 20px rgba(150, 91, 119, 0.18);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  background: #b76f91;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.8;
+}
+
+.card,
+.story,
+.gallery,
+.final {
+  margin: 80px 0;
+  padding: 55px 45px;
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid #f0dce7;
+  border-radius: 30px;
+  box-shadow: 0 15px 45px rgba(140, 91, 115, 0.08);
+}
+
+.card p:not(.small),
+.moment p,
+.final p {
+  line-height: 1.9;
+  color: #715b68;
+}
+
+.hidden {
+  display: none;
+}
+
+.timeline {
+  border-left: 2px solid #e5b8cd;
+  padding-left: 25px;
+  margin-top: 30px;
+}
+
+.moment {
+  position: relative;
+  margin-bottom: 35px;
+}
+
+.moment:last-child {
+  margin-bottom: 0;
+}
+
+.moment::before {
+  content: "♡";
+  position: absolute;
+  left: -39px;
+  top: -3px;
+  color: #c982a4;
+  background: #fff7fb;
+  font-size: 1.1rem;
+}
+
+.moment span {
+  font-size: 0.78rem;
+  letter-spacing: 1px;
+  color: #b9829e;
+}
+
+.moment h3 {
+  margin: 5px 0;
+  color: #7e4e69;
+  font-weight: 600;
+}
+
+.photos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.photo {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #f3dce7;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-note {
+  text-align: center;
+  margin-top: 15px;
+  font-size: 0.75rem;
+  color: #ad8b9b;
+}
+
+.final {
+  text-align: center;
+  padding: 70px 30px;
+}
+
+.big-heart {
+  font-size: 5rem;
+  color: #c982a4;
+  margin-top: 20px;
+  animation: pulse 1.5s infinite;
+}
+
+#loveButton {
+  margin-top: 15px;
+}
+
+.dinosaur {
+  margin-top: 30px;
+  animation: popIn 0.5s ease-out;
+}
+
+.dino {
+  font-size: 6rem;
+  line-height: 1;
+}
+
+.dino-message {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 13px 20px;
+  background: #fff0f6;
+  border: 1px solid #edc5d7;
+  border-radius: 20px;
+  color: #7e4e69;
+  font-weight: 600;
+}
+
+.floating-heart {
+  position: fixed;
+  bottom: -30px;
+  pointer-events: none;
+  animation: floatUp linear forwards;
+  color: #d99ab7;
+  z-index: 10;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(-110vh) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.2) rotate(-8deg);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.08) rotate(3deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .card,
+  .story,
+  .gallery,
+  .final {
+    padding: 40px 25px;
+  }
+
+  .photos {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
